@@ -1,0 +1,22 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Enter the float  value");
+		Scanner sc=new Scanner(System.in);
+		float  num=sc.nextFloat();
+		int n=Math.round(num);
+		int reminder,base=1,binary=0;
+		while(n!=0)
+		{
+		    reminder=n%2;
+		    binary=binary+reminder*base;
+		    base=base*10;
+		    n=n/2;
+		}
+		System.out.println("binary value :"+binary);
+		
+		
+	}
+}
