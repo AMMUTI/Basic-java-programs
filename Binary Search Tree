@@ -1,0 +1,63 @@
+package linkedlist;
+
+import java.util.Scanner;
+
+public class BST {
+	class node{
+		int key;
+		node left,right;
+		public node(int item)
+		{
+			key=item;
+			left=right=null;
+		}
+	}node root;
+	BST()
+	{
+		root=null;
+	}
+	public static void main(String args[])
+	{
+		System.out.println("Binary Search tree : ");
+		System.out.println("enter the element to add : ");
+		Scanner sc=new Scanner(System.in);
+		BST tree=new BST();
+		int n=sc.nextInt();
+		while(n>0)
+		{
+			tree.insert(n);
+			n=sc.nextInt();
+		}
+		tree.inorder();
+	}
+ void insert(int key)
+ {
+	 root=insertfun(root,key);
+ }
+ node insertfun(node root,int key)
+ {
+	 if(root==null)
+	 {
+		 root=new node(key);
+	 }
+	 if(root.key>key)
+	 {
+		 root.left=insertfun(root.left,key);
+	 }
+	 else if(root.key<key)
+	 {
+		 root.right=insertfun(root.right,key);
+	 }
+	 return root;
+ }
+ void inorder() {
+	 inorderfun(root);
+ }
+ void inorderfun(node root)
+ {if(root!=null) {
+	 inorderfun(root.left);
+	 System.out.println(root.key);
+	 inorderfun(root.right);
+ }
+ }
+}
