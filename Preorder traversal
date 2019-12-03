@@ -20,7 +20,7 @@ public class BST {
 	public static void main(String args[])
 	{
 		System.out.println("Binary Search tree : ");
-		System.out.println("enter the element to add : ");
+		System.out.println("Enter the element to add and 0 to stop adding : ");
 		Scanner sc=new Scanner(System.in);
 		BST tree=new BST();
 		int n=sc.nextInt();
@@ -53,13 +53,13 @@ public class BST {
 	 return root;
  }
  void preorder() {
-	 
+	 System.out.println("Preoder travesal of BST");
 	 preorderfun(root);
 	 
  }
  void preorderfun(node root)
  
- {System.out.println("Preoder travesal of BST");
+ {
 	 if(root!=null) 
  {
 	 System.out.println(root.key);
